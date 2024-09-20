@@ -1,0 +1,37 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+boto3 = "==1.35.19"
+botocore = "==1.35.19"
+certifi = "==2024.8.30"
+cffi = "==1.17.1"
+charset-normalizer = "==3.3.2"
+cryptography = "==43.0.1"
+idna = "==3.9"
+iniconfig = "==2.0.0"
+jinja2 = "==3.1.4"
+jmespath = "==1.0.1"
+markupsafe = "==2.1.5"
+packaging = "==24.1"
+pluggy = "==1.5.0"
+pycparser = "==2.22"
+pytest = "==8.3.3"
+python-dateutil = "==2.9.0.post0"
+pyyaml = "==6.0.2"
+requests = "==2.32.3"
+responses = "==0.25.3"
+s3transfer = "==0.10.2"
+six = "==1.16.0"
+urllib3 = "==2.2.3"
+werkzeug = "==3.0.4"
+xmltodict = "==0.13.0"
+moto = {extras = ["all", "s3", "ec2"], version = "*"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
+python_full_version = "3.12.6"
