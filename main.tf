@@ -5,6 +5,7 @@
 
 # Define variables
 variable "stage" {
+  type    = string
   default = "dev"
 }
 
