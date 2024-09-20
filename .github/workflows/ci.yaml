@@ -1,4 +1,4 @@
-name: Run Python Tests
+name: Lambda with Python Function and Tofu Deployment
 on:
   push:
     branches: [ main, "*"]

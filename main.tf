@@ -11,7 +11,7 @@ variable "stage" {
 
 resource "random_id" "id" {
   keepers = {
-    timestamp = "${timestamp()}" # force change on every execution
+    timestamp = timestamp() # force change on every execution
   }
   byte_length = 8
 }
