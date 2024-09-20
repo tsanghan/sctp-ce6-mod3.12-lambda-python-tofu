@@ -113,7 +113,7 @@ resource "aws_lambda_function" "lambda_function" {
 
   # Package your Python code as a zip file named 'lambda_function.zip'
   filename         = data.archive_file.lambda_zip.output_path
-  source_code_hash = filebase64sha256("lambda_function.zip")
+  source_code_hash = filebase64sha256(data.archive_file.lambda_zip.output_path)
 
   environment {
     variables = {
