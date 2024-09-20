@@ -9,6 +9,13 @@ variable "stage" {
   default = "dev"
 }
 
+resource "random_id" "id" {
+  keepers = {
+    timestamp = "${timestamp()}" # force change on every execution
+  }
+  byte_length = 8
+}
+
 # DynamoDB Table
 resource "aws_dynamodb_table" "dynamodb_table" {
   name         = "tsanghan-ce6-dynamodb-table-${var.stage}"
@@ -94,7 +101,7 @@ data "archive_file" "lambda_zip" {
   type = "zip"
 
   source_file = "${path.module}/lambda_function.py"
-  output_path = "${path.module}/lambda_function.zip"
+  output_path = "${path.module}/lambda_function-${random_id.id.dec}.zip"
 }
 
 # AWS Lambda Function
